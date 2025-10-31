@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleVio Gizlilik Politikası ve Kullanım Koşulları</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --bg-color: #0a0a0a;
+            --container-bg: rgba(30, 30, 30, 0.85);
+            --text-color: #e0e0e0;
+            --heading-color: #818cf8;
+            --border-color: rgba(129, 140, 248, 0.2);
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --section-bg: rgba(42, 42, 42, 0.6);
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(129, 140, 248, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(30, 30, 30, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(129, 140, 248, 0.1) inset;
+            border: 1px solid rgba(129, 140, 248, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .container:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(129, 140, 248, 0.3) inset,
+                0 0 40px rgba(129, 140, 248, 0.1);
+        }
+
+        .main-title {
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 3em;
+            margin-top: 0;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2em;
+            letter-spacing: -0.01em;
+        }
+
+        h2 {
+            color: var(--heading-color);
+            font-weight: 600;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid rgba(129, 140, 248, 0.3);
+            padding-bottom: 12px;
+            font-size: 1.6em;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #818cf8, transparent);
+        }
+
+        h3 {
+            color: #b4b9ff;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 18px;
+            font-size: 1.3em;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            margin: 18px 0;
+            text-align: justify;
+            line-height: 1.8;
+            color: rgba(224, 224, 224, 0.9);
+        }
+
+        ul ul {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        a {
+            color: #818cf8;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #818cf8, #a78bfa);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        a:hover {
+            color: #a78bfa;
+            text-shadow: 0 0 10px rgba(129, 140, 248, 0.5);
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 40px 0 60px 0;
+            padding: 40px;
+            background: rgba(42, 42, 42, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(129, 140, 248, 0.2);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(129, 140, 248, 0.1) inset;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(129, 140, 248, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .contact-info:hover::before {
+            left: 100%;
+        }
+
+        .contact-info:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 12px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(129, 140, 248, 0.3) inset,
+                0 0 30px rgba(129, 140, 248, 0.1);
+        }
+
+        .contact-info p {
+            font-size: 1.15em;
+            margin: 12px 0;
+            text-align: center;
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        .contact-info strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(129, 140, 248, 0.3), transparent);
+            margin: 50px 0;
+        }
+
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(129, 140, 248, 0.3);
+            border-radius: 12px;
+            padding: 10px 18px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            color: var(--text-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .language-toggle:hover {
+            background: rgba(42, 42, 42, 0.9);
+            border-color: rgba(129, 140, 248, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 20px rgba(129, 140, 248, 0.2);
+        }
+
+        .language-toggle:active {
+            transform: translateY(0);
+        }
+
+        .section {
+            margin-bottom: 35px;
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            background: rgba(129, 140, 248, 0.03);
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #818cf8;
+            font-weight: bold;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .main-title {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            h3 {
+                font-size: 1.15em;
+            }
+
+            .contact-info {
+                padding: 25px;
+            }
+
+            .language-toggle {
+                position: relative;
+                top: auto;
+                right: auto;
+                display: inline-block;
+                margin-bottom: 20px;
+            }
+
+            body {
+                padding: 10px;
+            }
+
+            .section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle" onclick="toggleLanguage()">TR / EN</div>
+    <div class="container">
+        <h1 class="main-title" data-lang-key="app-name">StyleVio</h1>
+        
+        <div class="contact-info">
+            <p data-lang-key="contact-intro">Uygulamamızla ilgili herhangi bir sorun, soru veya geri bildiriminiz için lütfen bizimle iletişime geçin.</p>
+            <p><strong data-lang-key="contact-email-label">E-posta:</strong> <a href="mailto:sahin.karahan@hotmail.com">sahin.karahan@hotmail.com</a></p>
+        </div>
+
+        <h1><span data-lang-key="privacy-title">GİZLİLİK POLİTİKASI</span></h1>
+
+        <div class="section">
+            <h3 data-lang-key="section1-title">1. Genel Bilgi</h3>
+            <p data-lang-key="section1-content">StyleVio, kullanıcılarına fotoğraf tabanlı kıyafet giydirme deneyimi sunan bir mobil uygulamadır. Bu gizlilik politikası, uygulamayı kullandığınızda hangi bilgilerin toplandığını, nasıl kullanıldığını ve korunduğunu açıklar.</p>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="section2-title">2. Toplanan Bilgiler</h3>
+            <p data-lang-key="section2-intro">Uygulamayı kullanırken aşağıdaki bilgiler toplanabilir:</p>
+            <ul>
+                <li data-lang-key="section2-1"><strong>Kimlik Bilgileri:</strong> Apple hesabınız üzerinden alınan ad, e-posta ve Apple kimliği bilgileri.</li>
+                <li data-lang-key="section2-2"><strong>Fotoğraf Verileri:</strong> Kullanıcının yüklediği kişisel fotoğraflar, giydirilmek istenen kıyafet görselleri ve oluşturulan sonuç görselleri.</li>
+                <li><span data-lang-key="section2-3"></span> <span data-lang-key="section2-3-intro"></span>
+                    <ul>
+                        <li data-lang-key="section2-3-1">App Store üzerinden yapılan tek seferlik kredi alımları ve abonelik işlemleri.</li>
+                        <li data-lang-key="section2-3-2">Abonelik yönetimi RevenueCat aracılığıyla yürütülür.</li>
+                        <li data-lang-key="section2-3-3">StyleVio, kredi kartı veya ödeme bilgilerinizi doğrudan toplamaz veya saklamaz.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="section3-title">3. Verilerin Saklanması ve İşlenmesi</h3>
+            <ul>
+                <li data-lang-key="section3-1">Yüklenen tüm görseller Amazon Web Services (AWS) üzerinde güvenli biçimde saklanır.</li>
+                <li data-lang-key="section3-2">Görsel işleme işlemleri Google Gemini API üzerinden yapılır.</li>
+                <li data-lang-key="section3-3">İşlem tamamlandıktan sonra oluşturulan sonuç görseli AWS'ye kaydedilir ve kullanıcıya gösterilir.</li>
+                <li data-lang-key="section3-4">Fotoğraflar 60 gün boyunca saklanır; bu sürenin sonunda sistem tarafından otomatik olarak kalıcı biçimde silinir.</li>
+                <li data-lang-key="section3-5">Kullanıcı tarafından favorilere eklenen fotoğraflar sadece manuel olarak silinebilir.</li>
+                <li data-lang-key="section3-6">RevenueCat yalnızca abonelik doğrulama ve faturalama amacıyla kullanılır; fotoğraflara veya kişisel içeriklere erişmez.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="section4-title">4. Hesap ve Veri Silme</h3>
+            <p data-lang-key="section4-1">Kullanıcılar, uygulama içindeki "Hesabı Sil" seçeneğini kullanarak hesaplarını ve tüm verilerini doğrudan silebilirler. Hesap silme işlemi tamamlandığında:</p>
+            <ul>
+                <li data-lang-key="section4-2">Kullanıcının profil bilgileri, fotoğrafları ve oluşturulan sonuç görselleri AWS'den kalıcı olarak silinir.</li>
+                <li data-lang-key="section4-3">Abonelik bilgileri RevenueCat üzerinden pasif duruma getirilir.</li>
+            </ul>
+            <p data-lang-key="section4-4">Kullanıcı dilerse ayrıca manuel olarak şu adresten de destek alabilir: <span class="emoji">📩</span> <a href="mailto:sahin.karahan@hotmail.com">sahin.karahan@hotmail.com</a></p>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="section5-title">5. Güvenlik</h3>
+            <p data-lang-key="section5-content">Tüm veri iletimleri SSL/TLS ile şifrelenir. AWS, RevenueCat ve Apple altyapıları endüstri standartlarına uygun güvenlik önlemleri kullanır.</p>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="section6-title">6. Üçüncü Taraf Hizmetleri</h3>
+            <p data-lang-key="section6-intro">StyleVio aşağıdaki hizmetleri kullanır:</p>
+            <ul>
+                <li data-lang-key="section6-1"><strong>Apple</strong> – Giriş ve ödeme işlemleri</li>
+                <li data-lang-key="section6-2"><strong>RevenueCat</strong> – Abonelik yönetimi</li>
+                <li data-lang-key="section6-3"><strong>AWS (Amazon Web Services)</strong> – Dosya depolama</li>
+                <li data-lang-key="section6-4"><strong>Google Gemini</strong> – Görsel işleme</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="section7-title">7. Değişiklikler</h3>
+            <p data-lang-key="section7-content">Bu gizlilik politikası gerektiğinde güncellenebilir. Güncellemeler uygulama içinden veya e-posta yoluyla duyurulur.</p>
+        </div>
+
+        <hr>
+
+        <h1><span data-lang-key="terms-title">KULLANIM KOŞULLARI</span></h1>
+
+        <div class="section">
+            <h3 data-lang-key="terms-section1-title">1. Genel Hükümler</h3>
+            <p data-lang-key="terms-section1-content">StyleVio'yu kullanarak bu koşulları kabul etmiş olursunuz. Bu koşulları kabul etmiyorsanız uygulamayı kullanmamalısınız.</p>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="terms-section2-title">2. Hesap Oluşturma</h3>
+            <p data-lang-key="terms-section2-content">Kullanıcılar yalnızca Apple ile Giriş Yap yöntemiyle hesap oluşturabilir. Anonim kullanım desteklenmez. Her hesap kişiye özeldir ve üçüncü kişilerle paylaşılması yasaktır.</p>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="terms-section3-title">3. Hizmet Tanımı</h3>
+            <p data-lang-key="terms-section3-content">StyleVio, kullanıcıların kendi fotoğraflarını ve kıyafet görsellerini yükleyerek sanal giydirme işlemleri yapabilmesini sağlar. Her işlem bir kredi karşılığında gerçekleştirilir. Krediler, tek seferlik satın alma veya haftalık, aylık, yıllık abonelik paketleri aracılığıyla elde edilir.</p>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="terms-section4-title">4. Ödeme ve Abonelikler</h3>
+            <ul>
+                <li data-lang-key="terms-section4-1">Tüm ödemeler Apple App Store aracılığıyla gerçekleştirilir.</li>
+                <li data-lang-key="terms-section4-2">Aboneliklerin takibi ve doğrulaması RevenueCat altyapısı üzerinden yapılır.</li>
+                <li data-lang-key="terms-section4-3">Abonelikler otomatik olarak yenilenir; kullanıcılar App Store hesabı üzerinden aboneliklerini yönetebilir veya iptal edebilir.</li>
+                <li data-lang-key="terms-section4-4">Ücretlendirme, yenileme tarihinden 24 saat önce Apple tarafından tahsil edilir.</li>
+                <li data-lang-key="terms-section4-5">İade ve iptal süreçleri Apple politikalarına tabidir.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="terms-section5-title">5. Kullanıcı Sorumlulukları</h3>
+            <ul>
+                <li data-lang-key="terms-section5-1">Kullanıcı yalnızca kendisine ait veya kullanım hakkı bulunan görselleri yüklemekle sorumludur.</li>
+                <li data-lang-key="terms-section5-2">Uygulamaya yasa dışı, saldırgan veya telif hakkı ihlali içeren içerik yüklenmesi yasaktır.</li>
+                <li data-lang-key="terms-section5-3">Bu tür ihlaller durumunda geliştirici hesabı askıya alma veya silme hakkına sahiptir.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="terms-section6-title">6. Hesap Silme</h3>
+            <p data-lang-key="terms-section6-1">Kullanıcılar, uygulama içinde bulunan "Hesabı Sil" seçeneği üzerinden hesaplarını kalıcı olarak silebilir. Silme işlemi sonrasında:</p>
+            <ul>
+                <li data-lang-key="terms-section6-2">Kullanıcıya ait tüm veriler (fotoğraflar, sonuç görselleri, kullanıcı profili) sistemden tamamen kaldırılır.</li>
+                <li data-lang-key="terms-section6-3">Abonelik verileri RevenueCat üzerinde pasif hale getirilir. Silinen hesaplar geri alınamaz.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="terms-section7-title">7. Fikri Mülkiyet</h3>
+            <p data-lang-key="terms-section7-content">Uygulamanın tüm fikri mülkiyet hakları (isim, tasarım, içerik, yazılım) Şahin KARAHAN'a aittir. İzinsiz kopyalama, paylaşma veya değiştirme yasaktır.</p>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="terms-section8-title">8. Hizmetin Değiştirilmesi</h3>
+            <p data-lang-key="terms-section8-content">Geliştirici, uygulamanın özelliklerini önceden bildirmeksizin değiştirme, askıya alma veya sonlandırma hakkını saklı tutar.</p>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="terms-section9-title">9. Sorumluluk Reddi</h3>
+            <p data-lang-key="terms-section9-content">StyleVio, üçüncü taraf servislerin (AWS, RevenueCat, Apple, Gemini) altyapısına dayanır. Bu servislerde yaşanabilecek kesintiler veya gecikmelerden geliştirici sorumlu tutulamaz. Uygulama "olduğu gibi" sunulur; belirli bir sonuç veya başarı garantisi verilmez.</p>
+        </div>
+
+        <div class="section">
+            <h3 data-lang-key="terms-section10-title">10. İletişim</h3>
+            <p data-lang-key="terms-section10-content">Destek, hesap silme veya yasal talepleriniz için: <span class="emoji">📩</span> <a href="mailto:sahin.karahan@hotmail.com">sahin.karahan@hotmail.com</a></p>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            tr: {
+                'app-name': 'StyleVio',
+                'contact-intro': 'Uygulamamızla ilgili herhangi bir sorun, soru veya geri bildiriminiz için lütfen bizimle iletişime geçin.',
+                'contact-email-label': 'E-posta:',
+                'privacy-title': 'GİZLİLİK POLİTİKASI',
+                'section1-title': '1. Genel Bilgi',
+                'section1-content': 'StyleVio, kullanıcılarına fotoğraf tabanlı kıyafet giydirme deneyimi sunan bir mobil uygulamadır. Bu gizlilik politikası, uygulamayı kullandığınızda hangi bilgilerin toplandığını, nasıl kullanıldığını ve korunduğunu açıklar.',
+                'section2-title': '2. Toplanan Bilgiler',
+                'section2-intro': 'Uygulamayı kullanırken aşağıdaki bilgiler toplanabilir:',
+                'section2-1': '<strong>Kimlik Bilgileri:</strong> Apple hesabınız üzerinden alınan ad, e-posta ve Apple kimliği bilgileri.',
+                'section2-2': '<strong>Fotoğraf Verileri:</strong> Kullanıcının yüklediği kişisel fotoğraflar, giydirilmek istenen kıyafet görselleri ve oluşturulan sonuç görselleri.',
+                'section2-3': '<strong>Ödeme ve Abonelik Bilgileri:</strong>',
+                'section2-3-intro': 'App Store üzerinden yapılan ödeme işlemleri ve abonelik bilgileri.',
+                'section2-3-1': 'App Store üzerinden yapılan tek seferlik kredi alımları ve abonelik işlemleri.',
+                'section2-3-2': 'Abonelik yönetimi RevenueCat aracılığıyla yürütülür.',
+                'section2-3-3': 'StyleVio, kredi kartı veya ödeme bilgilerinizi doğrudan toplamaz veya saklamaz.',
+                'section3-title': '3. Verilerin Saklanması ve İşlenmesi',
+                'section3-1': 'Yüklenen tüm görseller Amazon Web Services (AWS) üzerinde güvenli biçimde saklanır.',
+                'section3-2': 'Görsel işleme işlemleri Google Gemini API üzerinden yapılır.',
+                'section3-3': 'İşlem tamamlandıktan sonra oluşturulan sonuç görseli AWS\'ye kaydedilir ve kullanıcıya gösterilir.',
+                'section3-4': 'Fotoğraflar 60 gün boyunca saklanır; bu sürenin sonunda sistem tarafından otomatik olarak kalıcı biçimde silinir.',
+                'section3-5': 'Kullanıcı tarafından favorilere eklenen fotoğraflar sadece manuel olarak silinebilir.',
+                'section3-6': 'RevenueCat yalnızca abonelik doğrulama ve faturalama amacıyla kullanılır; fotoğraflara veya kişisel içeriklere erişmez.',
+                'section4-title': '4. Hesap ve Veri Silme',
+                'section4-1': 'Kullanıcılar, uygulama içindeki "Hesabı Sil" seçeneğini kullanarak hesaplarını ve tüm verilerini doğrudan silebilirler. Hesap silme işlemi tamamlandığında:',
+                'section4-2': 'Kullanıcının profil bilgileri, fotoğrafları ve oluşturulan sonuç görselleri AWS\'den kalıcı olarak silinir.',
+                'section4-3': 'Abonelik bilgileri RevenueCat üzerinden pasif duruma getirilir.',
+                'section4-4': 'Kullanıcı dilerse ayrıca manuel olarak şu adresten de destek alabilir: 📩 <a href="mailto:sahin.karahan@hotmail.com">sahin.karahan@hotmail.com</a>',
+                'section5-title': '5. Güvenlik',
+                'section5-content': 'Tüm veri iletimleri SSL/TLS ile şifrelenir. AWS, RevenueCat ve Apple altyapıları endüstri standartlarına uygun güvenlik önlemleri kullanır.',
+                'section6-title': '6. Üçüncü Taraf Hizmetleri',
+                'section6-intro': 'StyleVio aşağıdaki hizmetleri kullanır:',
+                'section6-1': '<strong>Apple</strong> – Giriş ve ödeme işlemleri',
+                'section6-2': '<strong>RevenueCat</strong> – Abonelik yönetimi',
+                'section6-3': '<strong>AWS (Amazon Web Services)</strong> – Dosya depolama',
+                'section6-4': '<strong>Google Gemini</strong> – Görsel işleme',
+                'section7-title': '7. Değişiklikler',
+                'section7-content': 'Bu gizlilik politikası gerektiğinde güncellenebilir. Güncellemeler uygulama içinden veya e-posta yoluyla duyurulur.',
+                'terms-title': 'KULLANIM KOŞULLARI',
+                'terms-section1-title': '1. Genel Hükümler',
+                'terms-section1-content': 'StyleVio\'yu kullanarak bu koşulları kabul etmiş olursunuz. Bu koşulları kabul etmiyorsanız uygulamayı kullanmamalısınız.',
+                'terms-section2-title': '2. Hesap Oluşturma',
+                'terms-section2-content': 'Kullanıcılar yalnızca Apple ile Giriş Yap yöntemiyle hesap oluşturabilir. Anonim kullanım desteklenmez. Her hesap kişiye özeldir ve üçüncü kişilerle paylaşılması yasaktır.',
+                'terms-section3-title': '3. Hizmet Tanımı',
+                'terms-section3-content': 'StyleVio, kullanıcıların kendi fotoğraflarını ve kıyafet görsellerini yükleyerek sanal giydirme işlemleri yapabilmesini sağlar. Her işlem bir kredi karşılığında gerçekleştirilir. Krediler, tek seferlik satın alma veya haftalık, aylık, yıllık abonelik paketleri aracılığıyla elde edilir.',
+                'terms-section4-title': '4. Ödeme ve Abonelikler',
+                'terms-section4-1': 'Tüm ödemeler Apple App Store aracılığıyla gerçekleştirilir.',
+                'terms-section4-2': 'Aboneliklerin takibi ve doğrulaması RevenueCat altyapısı üzerinden yapılır.',
+                'terms-section4-3': 'Abonelikler otomatik olarak yenilenir; kullanıcılar App Store hesabı üzerinden aboneliklerini yönetebilir veya iptal edebilir.',
+                'terms-section4-4': 'Ücretlendirme, yenileme tarihinden 24 saat önce Apple tarafından tahsil edilir.',
+                'terms-section4-5': 'İade ve iptal süreçleri Apple politikalarına tabidir.',
+                'terms-section5-title': '5. Kullanıcı Sorumlulukları',
+                'terms-section5-1': 'Kullanıcı yalnızca kendisine ait veya kullanım hakkı bulunan görselleri yüklemekle sorumludur.',
+                'terms-section5-2': 'Uygulamaya yasa dışı, saldırgan veya telif hakkı ihlali içeren içerik yüklenmesi yasaktır.',
+                'terms-section5-3': 'Bu tür ihlaller durumunda geliştirici hesabı askıya alma veya silme hakkına sahiptir.',
+                'terms-section6-title': '6. Hesap Silme',
+                'terms-section6-1': 'Kullanıcılar, uygulama içinde bulunan "Hesabı Sil" seçeneği üzerinden hesaplarını kalıcı olarak silebilir. Silme işlemi sonrasında:',
+                'terms-section6-2': 'Kullanıcıya ait tüm veriler (fotoğraflar, sonuç görselleri, kullanıcı profili) sistemden tamamen kaldırılır.',
+                'terms-section6-3': 'Abonelik verileri RevenueCat üzerinde pasif hale getirilir. Silinen hesaplar geri alınamaz.',
+                'terms-section7-title': '7. Fikri Mülkiyet',
+                'terms-section7-content': 'Uygulamanın tüm fikri mülkiyet hakları (isim, tasarım, içerik, yazılım) Şahin KARAHAN\'a aittir. İzinsiz kopyalama, paylaşma veya değiştirme yasaktır.',
+                'terms-section8-title': '8. Hizmetin Değiştirilmesi',
+                'terms-section8-content': 'Geliştirici, uygulamanın özelliklerini önceden bildirmeksizin değiştirme, askıya alma veya sonlandırma hakkını saklı tutar.',
+                'terms-section9-title': '9. Sorumluluk Reddi',
+                'terms-section9-content': 'StyleVio, üçüncü taraf servislerin (AWS, RevenueCat, Apple, Gemini) altyapısına dayanır. Bu servislerde yaşanabilecek kesintiler veya gecikmelerden geliştirici sorumlu tutulamaz. Uygulama "olduğu gibi" sunulur; belirli bir sonuç veya başarı garantisi verilmez.',
+                'terms-section10-title': '10. İletişim',
+                'terms-section10-content': 'Destek, hesap silme veya yasal talepleriniz için: 📩 <a href="mailto:sahin.karahan@hotmail.com">sahin.karahan@hotmail.com</a>'
+            },
+            en: {
+                'app-name': 'StyleVio',
+                'contact-intro': 'For any problem, question, or feedback regarding our application, please contact us.',
+                'contact-email-label': 'Email:',
+                'privacy-title': 'PRIVACY POLICY',
+                'section1-title': '1. General Information',
+                'section1-content': 'StyleVio is a mobile application that offers users a photo-based clothing try-on experience. This privacy policy explains what information is collected when you use the app, how it is used, and how it is protected.',
+                'section2-title': '2. Information Collected',
+                'section2-intro': 'The following information may be collected when using the app:',
+                'section2-1': '<strong>Identity Information:</strong> Name, email, and Apple ID information obtained through your Apple account.',
+                'section2-2': '<strong>Photo Data:</strong> Personal photos uploaded by users, clothing images they want to try on, and generated result images.',
+                'section2-3': '<strong>Payment and Subscription Information:</strong>',
+                'section2-3-intro': 'Payment transactions and subscription information made through the App Store.',
+                'section2-3-1': 'One-time credit purchases and subscription transactions made through the App Store.',
+                'section2-3-2': 'Subscription management is handled through RevenueCat.',
+                'section2-3-3': 'StyleVio does not directly collect or store your credit card or payment information.',
+                'section3-title': '3. Data Storage and Processing',
+                'section3-1': 'All uploaded images are securely stored on Amazon Web Services (AWS).',
+                'section3-2': 'Image processing operations are performed through Google Gemini API.',
+                'section3-3': 'After the process is completed, the generated result image is saved to AWS and shown to the user.',
+                'section3-4': 'Photos are stored for 60 days; after this period, they are automatically and permanently deleted by the system.',
+                'section3-5': 'Photos added to favorites by users can only be deleted manually.',
+                'section3-6': 'RevenueCat is used solely for subscription verification and billing purposes; it does not access photos or personal content.',
+                'section4-title': '4. Account and Data Deletion',
+                'section4-1': 'Users can directly delete their accounts and all their data using the "Delete Account" option within the app. When the account deletion process is completed:',
+                'section4-2': 'The user\'s profile information, photos, and generated result images are permanently deleted from AWS.',
+                'section4-3': 'Subscription information is deactivated on RevenueCat.',
+                'section4-4': 'Users can also manually request support from: 📩 <a href="mailto:sahin.karahan@hotmail.com">sahin.karahan@hotmail.com</a>',
+                'section5-title': '5. Security',
+                'section5-content': 'All data transmissions are encrypted with SSL/TLS. AWS, RevenueCat, and Apple infrastructures use security measures that comply with industry standards.',
+                'section6-title': '6. Third-Party Services',
+                'section6-intro': 'StyleVio uses the following services:',
+                'section6-1': '<strong>Apple</strong> – Login and payment transactions',
+                'section6-2': '<strong>RevenueCat</strong> – Subscription management',
+                'section6-3': '<strong>AWS (Amazon Web Services)</strong> – File storage',
+                'section6-4': '<strong>Google Gemini</strong> – Image processing',
+                'section7-title': '7. Changes',
+                'section7-content': 'This privacy policy may be updated as needed. Updates will be announced through the app or via email.',
+                'terms-title': 'TERMS OF USE',
+                'terms-section1-title': '1. General Provisions',
+                'terms-section1-content': 'By using StyleVio, you agree to these terms. If you do not agree to these terms, you should not use the app.',
+                'terms-section2-title': '2. Account Creation',
+                'terms-section2-content': 'Users can only create accounts using the Sign in with Apple method. Anonymous usage is not supported. Each account is personal and sharing with third parties is prohibited.',
+                'terms-section3-title': '3. Service Description',
+                'terms-section3-content': 'StyleVio allows users to perform virtual try-on operations by uploading their own photos and clothing images. Each operation is performed in exchange for a credit. Credits are obtained through one-time purchases or weekly, monthly, and annual subscription packages.',
+                'terms-section4-title': '4. Payments and Subscriptions',
+                'terms-section4-1': 'All payments are made through the Apple App Store.',
+                'terms-section4-2': 'Subscription tracking and verification is done through the RevenueCat infrastructure.',
+                'terms-section4-3': 'Subscriptions automatically renew; users can manage or cancel their subscriptions through their App Store account.',
+                'terms-section4-4': 'Billing is collected by Apple 24 hours before the renewal date.',
+                'terms-section4-5': 'Refund and cancellation processes are subject to Apple policies.',
+                'terms-section5-title': '5. User Responsibilities',
+                'terms-section5-1': 'Users are responsible for uploading only images they own or have the right to use.',
+                'terms-section5-2': 'Uploading illegal, offensive, or copyright-infringing content to the app is prohibited.',
+                'terms-section5-3': 'In case of such violations, the developer has the right to suspend or delete the account.',
+                'terms-section6-title': '6. Account Deletion',
+                'terms-section6-1': 'Users can permanently delete their accounts through the "Delete Account" option within the app. After the deletion process:',
+                'terms-section6-2': 'All user data (photos, result images, user profile) is completely removed from the system.',
+                'terms-section6-3': 'Subscription data is deactivated on RevenueCat. Deleted accounts cannot be recovered.',
+                'terms-section7-title': '7. Intellectual Property',
+                'terms-section7-content': 'All intellectual property rights of the app (name, design, content, software) belong to Şahin KARAHAN. Unauthorized copying, sharing, or modification is prohibited.',
+                'terms-section8-title': '8. Service Modification',
+                'terms-section8-content': 'The developer reserves the right to modify, suspend, or terminate the app\'s features without prior notice.',
+                'terms-section9-title': '9. Disclaimer',
+                'terms-section9-content': 'StyleVio relies on third-party service infrastructures (AWS, RevenueCat, Apple, Gemini). The developer cannot be held responsible for interruptions or delays that may occur in these services. The app is provided "as is"; no specific result or success guarantee is given.',
+                'terms-section10-title': '10. Contact',
+                'terms-section10-content': 'For support, account deletion, or legal requests: 📩 <a href="mailto:sahin.karahan@hotmail.com">sahin.karahan@hotmail.com</a>'
+            }
+        };
+
+        let currentLang = 'tr';
+
+        function updateContent() {
+            const elements = document.querySelectorAll('[data-lang-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[currentLang][key]) {
+                    // If element contains HTML tags in translation, use innerHTML, otherwise textContent
+                    const translation = translations[currentLang][key];
+                    if (translation.includes('<')) {
+                        el.innerHTML = translation;
+                    } else {
+                        el.textContent = translation;
+                    }
+                }
+            });
+            document.documentElement.lang = currentLang;
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'tr' ? 'en' : 'tr';
+            updateContent();
+        }
+
+        document.addEventListener('DOMContentLoaded', updateContent);
+    </script>
+</body>
+</html>
